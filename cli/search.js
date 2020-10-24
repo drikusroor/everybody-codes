@@ -9,9 +9,7 @@ const logFoundCameras = async () => {
   const foundCameras = data
     .filter((row) => row.Camera.includes(name))
     .map((row) => {
-      // TODO: Replace with regex
-      const number = row.Camera.substring(7, 10);
-      const rowString = `${number} | ${row.Camera} | ${row.Latitude} | ${row.Longitude}`;
+      const rowString = `${row.Number} | ${row.Camera} | ${row.Latitude} | ${row.Longitude}`;
       console.log(rowString);
     });
 };

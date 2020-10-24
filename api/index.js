@@ -1,6 +1,9 @@
 const express = require("express");
-const app = express();
 const getData = require("../shared/getData");
+const cors = require("cors");
+
+const app = express();
+app.use(cors());
 
 app.get("/", async (_req, res) => {
   res.send("Please use the /data endpoint to get the Camera data.");
@@ -12,4 +15,4 @@ app.get("/data", async (_req, res) => {
   res.json(data);
 });
 
-app.listen(3000);
+app.listen(3001);

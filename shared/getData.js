@@ -8,10 +8,15 @@ const getData = (path, separator = ";") => {
     try {
       fs.createReadStream(path)
         .pipe(csv({ separator }))
-        .on(
-          "data",
-          (data) => !data.Camera.includes("ERROR") && results.push(data)
-        )
+        .on("data", (data) => {
+          // TODO: Replace with regex
+          if (data.Camera.includes("ERROR")) {
+            return;
+          }
+          const number = data.Camera.substring(7, 10);
+          data.Number = number;
+          results.push(data);
+        })
         .on("end", () => {
           resolve(results);
         });
