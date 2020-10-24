@@ -7,7 +7,7 @@ const logFoundCameras = async () => {
   const path = __dirname + "/../data/cameras-defb.csv";
   const data = await getData(path);
   const foundCameras = data
-    .filter((row) => !row.Camera.includes("ERROR") && row.Camera.includes(name))
+    .filter((row) => row.Camera.includes(name))
     .map((row) => {
       // TODO: Replace with regex
       const number = row.Camera.substring(7, 10);

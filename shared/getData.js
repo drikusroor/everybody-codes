@@ -8,7 +8,10 @@ const getData = (path, separator = ";") => {
     try {
       fs.createReadStream(path)
         .pipe(csv({ separator }))
-        .on("data", (data) => results.push(data))
+        .on(
+          "data",
+          (data) => !data.Camera.includes("ERROR") && results.push(data)
+        )
         .on("end", () => {
           resolve(results);
         });
