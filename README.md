@@ -6,6 +6,8 @@ By Drikus Roor
 
 ## Thought process
 
+### 09:30 - 10:30
+
 - Are there any shared functionalities?
 
   - I cannot see any for now
@@ -20,3 +22,11 @@ By Drikus Roor
   - For now, use substring as all camera ids are in the same place in the string
 
 - Need to filter out ERROR line from csv file
+
+### 10:30 - 10.45
+
+- "Serveer de data uit de csv vanuit een web-API, zodat een webapplicatie die data ergens kan ophalen."
+
+  - What is meant by "de data"? All the data or the data filtered by name? For now, I choose all data.
+
+- Need to eliminate the "ERROR" line in the csv earlier in the process so that the API will not get dirty data.
